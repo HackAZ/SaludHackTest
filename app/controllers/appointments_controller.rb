@@ -29,6 +29,7 @@ class AppointmentsController < ApplicationController
     @appointment.insurance = current_user.insurance
     @appointment.patient_name = current_user.name
     @appointment.user_id = current_user.id
+    @appointment.phone = current_user.phone
     respond_to do |format|
       if @appointment.save
         format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
