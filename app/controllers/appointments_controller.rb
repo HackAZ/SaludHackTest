@@ -3,8 +3,8 @@ class AppointmentsController < ApplicationController
   before_action :authenticate_user!
 
   REGION  = 'us-west-2'
-  KEY     = 'AKIAILXHTW3C4IJ3SMOA'
-  SECRET  = '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'
+  KEY     = 'AKIAJ4SYSTTGXD6EQGNA'
+  SECRET  = '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'
   TOPIC   = 'arn:aws:sns:us-west-2:079217667697:requests'
 
   Aws.config.update(
@@ -42,13 +42,13 @@ class AppointmentsController < ApplicationController
     @appointment.insurance = current_user.insurance
     @appointment.patient_name = current_user.name
     @appointment.user_id = current_user.id
+    @appointment.phone = current_user.phone
     c = Aws::SNS::Client.new(region: REGION)
 
     p = c.publish(
       topic_arn: TOPIC,
       message: @appointment.to_json)
     puts "Published... #{p.message_id}" 
-
     respond_to do |format|
       if @appointment.save
         format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }

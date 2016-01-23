@@ -21,6 +21,21 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#custom-nav {
+    background-color: rgba(0,0,0,0);
+    border: 0;
+    box-shadow: none;
+    z-index: 999;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transition: background .5s ease-in-out, opacity .5s ease;
+    -moz-transition: background .5s ease-in-out, opacity .5s ease;
+    transition: background .5s ease-in-out, opacity .5s ease;
+    a {
+      color: white !important;
+    }
+}
+
 .tokenize {
   color: black;
 }
@@ -30,8 +45,8 @@ input, select, textarea{
 
 body {
   background: linear-gradient(#278A91, #1A5C61) fixed;
-  color: white;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+  color: white !important;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif !important;
 }
 
 .tokenize-sample {
