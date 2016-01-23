@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160123160931) do
     t.string   "location"
     t.float    "latitude"
     t.float    "longitude"
-    t.string   "phone_number"
+    t.string   "phone"
     t.integer  "rating"
     t.string   "provider_type"
     t.string   "specialization"
