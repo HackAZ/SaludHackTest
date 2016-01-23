@@ -12,7 +12,7 @@
       = select_tag 'specialization', specialization_options, multiple: true, class: :"tokenize-sample tokenize"
     .form-group
 
-    = submit_tag 'Send', class: 'btn btn-primary'
+    = submit_tag 'Submit', class: 'btn btn-primary'
 
 
-= link_to "Sign Out", destroy_user_session_path, method: :delete
+    = link_to "Sign Out", destroy_user_session_path, class: :'btn btn-info', method: :delete

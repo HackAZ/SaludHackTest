@@ -1,20 +1,21 @@
-= form_for @appointment do |f|
-  - if @appointment.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@appointment.errors.count, "error")} prohibited this appointment from being saved:"
-      %ul
-        - @appointment.errors.full_messages.each do |msg|
-          %li= msg
+.container
+  = form_for @appointment do |f|
+    - if @appointment.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@appointment.errors.count, "error")} prohibited this appointment from being saved:"
+        %ul
+          - @appointment.errors.full_messages.each do |msg|
+            %li= msg
 
-  = hidden_field_tag :clinic_name, params[:clinic_name]
-  .field
-    = f.label :days
-    = f.text_field :days
-  .field
-    = f.label :time_of_day
-    = f.text_field :time_of_day
-  .field
-    = f.label :description
-    = f.text_area :description
-  .actions
-    = f.submit 'Save'
+    = hidden_field_tag :clinic_name, params[:clinic_name]
+    .field
+      = f.label :days
+      = f.text_field :days
+    .field
+      = f.label :time_of_day
+      = f.text_field :time_of_day
+    .field
+      = f.label :description
+      = f.text_area :description
+    .actions
+      = f.submit 'Save'

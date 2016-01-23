@@ -21,10 +21,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
-  background-color:  #29a3a3;
-  color: white;
+.tokenize {
+  color: black;
 }
+input, select, textarea{
+    color: black;
+}
+
+body {
+  background: linear-gradient(#278A91, #1A5C61) fixed;
+  color: white;
+  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+}
+
 .tokenize-sample {
     width: 500px;
     height: 30px;

@@ -1,4 +1,6 @@
-%h1 Users#appointments
-%p Find me in app/views/users/appointments.html.erb
-- @appointments.each do |appointment|
-  = appointment.clinic_name
+.container
+  .page-header
+    %h1 Your Appointments
+  - @appointments.each do |appointment|
+    = appointment.clinic_name
+    %br

@@ -1,24 +1,25 @@
-%p#notice= notice
+.container
+  %p#notice= notice
 
-%p
-  %b Patient name:
-  = @appointment.patient_name
-%p
-  %b Clinic name:
-  = @appointment.clinic_name
-%p
-  %b Days:
-  = @appointment.days
-%p
-  %b Time of day:
-  = @appointment.time_of_day
-%p
-  %b Description:
-  = @appointment.description
-%p
-  %b Insurance:
-  = @appointment.insurance
+  %p
+    %b Patient name:
+    = @appointment.patient_name
+  %p
+    %b Clinic name:
+    = @appointment.clinic_name
+  %p
+    %b Days:
+    = @appointment.days
+  %p
+    %b Time of day:
+    = @appointment.time_of_day
+  %p
+    %b Description:
+    = @appointment.description
+  %p
+    %b Insurance:
+    = @appointment.insurance
 
-= link_to 'Edit', edit_appointment_path(@appointment)
-\|
-= link_to 'Back', appointments_path
+  = link_to 'Edit', edit_appointment_path(@appointment)
+  \|
+  = link_to 'Back', appointments_path

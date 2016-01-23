@@ -5,7 +5,7 @@ one:
   location: MyString
   latitude: 1.5
   longitude: 1.5
-  phone_number: MyString
+  phone: MyString
   rating: 1
   provider_type: MyString
   specialization: MyString
@@ -15,7 +15,7 @@ two:
   location: MyString
   latitude: 1.5
   longitude: 1.5
-  phone_number: MyString
+  phone: MyString
   rating: 1
   provider_type: MyString
   specialization: MyString

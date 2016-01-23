@@ -1,7 +1,6 @@
 .container
   %p#notice= notice
-  .jumbotron
-    %p
+  .page-header
     %h1
       %center
         = @provider.name
@@ -9,7 +8,7 @@
     %strong Location:
     = @provider.location
   %p
-    %strong Phone number:
+    %strong phone_number number:
     = @provider.phone_number
   %p
     %strong Rating:
