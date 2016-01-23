@@ -1,8 +1,9 @@
 // Place all the styles related to the providers controller here.
 // They will automatically be included in application.css.
 // // You can use Sass (SCSS) here: http://sass-lang.com/
-#map {
-  position:absolute; top:0; bottom:0; width:50%;
+.locationsResult {
+    font-size: 20px;
+    a {
+      color: #34D1CE;
+    }
 }
-
-.map { position:absolute; top:0; bottom:0; width:50%; }

@@ -8,7 +8,9 @@ class ProvidersController < ApplicationController
   end
 
   def search
-    @services = Provider.where(provider_type: params['services']).where(specialization: params['specialization'])
+    # @location = current_user
+    # @services = Provider.where(provider_type: params['services']).where(specialization: params['specialization'])
+    @locations = Provider.near(current_user, 50, :order => "distance")
   end
 
   # GET /providers/1

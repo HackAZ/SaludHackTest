@@ -1,9 +1,15 @@
 .container
   .page-header
     %h2 Providers
-  - if @services.blank?
-    Your search did not return anything!
-  - else
-    -@services.each do |service|
-      = link_to service.name, service
-      %br
+  .locationsResult
+    - if @locations.blank?
+      Your search did not return anything!
+    - else
+      - @locations.each do |location|
+        .row
+          .col-md-2
+            = location.distance_from(current_user).round(2)
+            mi
+          .col-md-6
+            = link_to location.name, location
+          %br
