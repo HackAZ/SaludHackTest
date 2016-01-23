@@ -1,0 +1,30 @@
+%p#notice= notice
+%h1 Listing Providers
+%table
+  %thead
+    %tr
+      %th Name
+      %th Location
+      %th Latitude
+      %th Longitude
+      %th Phone number
+      %th Rating
+      %th Type
+      %th Specialization
+      %th{:colspan => "3"}
+  %tbody
+    - @providers.each do |provider|
+      %tr
+        %td= provider.name
+        %td= provider.location
+        %td= provider.latitude
+        %td= provider.longitude
+        %td= provider.phone_number
+        %td= provider.rating
+        %td= provider.provider_type
+        %td= provider.specialization
+        %td= link_to 'Show', provider
+        %td= link_to 'Edit', edit_provider_path(provider)
+        %td= link_to 'Destroy', provider, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Provider', new_provider_path

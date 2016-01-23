@@ -1,0 +1,29 @@
+.container
+  %p#notice= notice
+  .jumbotron
+    %p
+    %h1
+      %center
+        = @provider.name
+  %p
+    %strong Location:
+    = @provider.location
+  %p
+    %strong Phone number:
+    = @provider.phone_number
+  %p
+    %strong Rating:
+    = @provider.rating
+  %p
+    %strong Type:
+    = @provider.provider_type
+  %p
+    %strong Specialization:
+    = @provider.specialization
+  = content_tag(:iframe,'', width: 500, height: 400, src: "https://www.google.com/maps/embed/v1/view?key=AIzaSyAZng7PBC1qUtAMOHj31LUfs6BYx6sAKZw&center=#{@provider.latitude},#{@provider.longitude}&zoom=18&maptype=roadmap")
+  %br
+  = link_to 'Make Appointment', new_appointment_path(clinic_name: @provider.name), class: :'btn btn-primary'
+
+  = link_to 'Edit', edit_provider_path(@provider)
+  |
+  = link_to 'Back', providers_path
