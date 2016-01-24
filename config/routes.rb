@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post 'providers/index'
 
   get 'landing/index'
+  get 'landing/afterlogin'
 
   devise_for :users
 

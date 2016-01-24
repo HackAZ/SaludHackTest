@@ -1,31 +1,30 @@
-%h1 Listing appointments
+.container
+  .row
+    .appointments
+      %h1 Your Appointments
+      .appointmentInfo
+        %table.table.table-responsive
+          %thead
+            %tr
+              %th Clinic name
+              %th Days
+              %th Time of day
+              %th
+              %th
+              %th
 
-%table
-  %thead
-    %tr
-      %th Patient name
-      %th Clinic name
-      %th Days
-      %th Time of day
-      %th Description
-      %th Insurance
-      %th
-      %th
-      %th
+          %tbody
+            - @appointments.each do |appointment|
+              %tr
+                %td= appointment.clinic_name
+                %td= appointment.days
+                %td= appointment.time_of_day
+                %td= link_to 'Show', appointment, class: :'btn btn-default'
+    #map
 
-  %tbody
-    - @appointments.each do |appointment|
-      %tr
-        %td= appointment.patient_name
-        %td= appointment.clinic_name
-        %td= appointment.days
-        %td= appointment.time_of_day
-        %td= appointment.description
-        %td= appointment.insurance
-        %td= link_to 'Show', appointment
-        %td= link_to 'Edit', edit_appointment_path(appointment)
-        %td= link_to 'Destroy', appointment, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
 
-= link_to 'New Appointment', new_appointment_path
+:javascript
+  L.mapbox.accessToken = 'pk.eyJ1IjoiYW1waGl0aGVyZSIsImEiOiIyZGE2MWJhYTdlNjJkM2E4NTZhYjUyODE3NDFmNzY3MSJ9.EDkcexR3h8zGfuPOXADctQ';
+  var map = L.mapbox.map('map', 'mapbox.streets')
+      .setView([40, -74.50], 9);

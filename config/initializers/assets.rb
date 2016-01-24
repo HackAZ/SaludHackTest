@@ -15,3 +15,4 @@ Rails.application.config.assets.precompile += %w( flowers-desk-office-vintage.jp
 Rails.application.config.assets.precompile += %w( landing-stage-sea-holiday-vacation.jpg )
 Rails.application.config.assets.precompile += %w( city-person-relaxing-sitting.jpg )
 Rails.application.config.assets.precompile += %w( salud_heart.png )
+Rails.application.config.assets.precompile += %w( white_arrow.png )

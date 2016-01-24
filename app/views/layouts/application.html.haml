@@ -2,8 +2,8 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %script{:src => "http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js"}
-    %link{:href => "http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.css", :rel => "stylesheet"}/
+    %script{:src => "https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.js"}
+    %link{:href => "https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css", :rel => "stylesheet"}/
     %title Salud
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
@@ -38,14 +38,16 @@
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
                 - if user_signed_in?
-                  = "#{current_user.name} is logged in"
+                  Signed In
                 - else
-                  Sign In
+                  Sign Up
                 %b.caret
               %ul.dropdown-menu
                 -if user_signed_in?
                   %li
                     = link_to "Your Profile", edit_user_registration_path
+                  %li
+                    = link_to "Your Appointments", appointments_path
                   %li
                     = link_to "Sign Out", destroy_user_session_path, method: :delete
                 - else

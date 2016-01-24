@@ -1,16 +1,12 @@
+.container
+  .serviceFind
+    %h3 What kind of service?
+    = form_tag search_path, method: :post do
+      .form-group
+        = select_tag 'services', service_options, multiple: true, class: :'tokenize-sample tokenize', id: :'tokenize'
+      %h3 What kind of specialization?
+      .form-group
+        = select_tag 'specialization', specialization_options, multiple: true, class: :"tokenize-sample tokenize"
+      .form-group
 
-
-%h3 What service are you looking for?
-= form_tag search_path, method: :post do
-.form-group
-  = label_tag 'services', "Choose services"
-  = select_tag 'services', service_options, multiple: true, class: :'tokenize-sample tokenize', id: :'tokenize'
-.form-group
-  = label_tag 'specialization', "Choose a specialization"
-  = select_tag 'specialization', specialization_options, multiple: true, class: :"tokenize-sample tokenize"
-.form-group
-
-= submit_tag 'Submit', class: 'btn btn-primary'
-
-
-= link_to "Sign Out", destroy_user_session_path, class: :'btn btn-info', method: :delete
+      = image_submit_tag("white_arrow.png", class: :'white_arrow')

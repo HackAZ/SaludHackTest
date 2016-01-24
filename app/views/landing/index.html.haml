@@ -1,7 +1,9 @@
 .container
 .headerInfo
   %h1 To good health
-  =link_to "Sign up", new_user_registration_path, class: :"btn btn-default"
+  = link_to image_tag("white_arrow.png"), new_user_registration_path
+
+
 #carousel-example-generic.carousel.slide{"data-ride" => "carousel"}
   / Indicators
   %ol.carousel-indicators

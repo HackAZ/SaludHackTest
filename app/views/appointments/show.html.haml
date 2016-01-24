@@ -1,26 +1,34 @@
 .container
   %p#notice= notice
-
+  .page-header
+    %h1 Your Appointment
   %p
     %b Patient name:
+    %br
     = @appointment.patient_name
   %p
     %b Clinic name:
+    %br
     = @appointment.clinic_name
   %p
     %b Days:
+    %br
     = @appointment.days
   %p
     %b Time of day:
+    %br
     = @appointment.time_of_day
   %p
     %b Description:
+    %br
     = @appointment.description
   %p
     %b Insurance:
+    %br
     = @appointment.insurance
   %p
     %b Reoccuring Appointment:
+    %br
     Every
     = @appointment.reoccur
     Months
