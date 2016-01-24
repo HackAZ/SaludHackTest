@@ -1,7 +1,7 @@
 .container
   .row
     .appointments
-      %h1 Your Appointments
+      %h1 Your Preferred Times
       .appointmentInfo
         %table.table.table-responsive
           %thead
@@ -10,8 +10,6 @@
               %th Days
               %th Time of day
               %th
-              %th
-              %th
 
           %tbody
             - @appointments.each do |appointment|
@@ -19,7 +17,7 @@
                 %td= appointment.clinic_name
                 %td= appointment.days
                 %td= appointment.time_of_day
-                %td= link_to 'Show', appointment, class: :'btn btn-default'
+                %td= link_to image_tag("white_arrow.png"), appointment, class: :'white_arrow'
     #map
 
 

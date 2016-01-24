@@ -38,11 +38,12 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
-    @appointment = Appointment.new(appointment_params.merge(clinic_name: params[:clinic_name]))
+    @appointment = Appointment.new(appointment_params.merge(clinic_name: params[:clinic_name], provider_type: params[:provider_type]))
     @appointment.insurance = current_user.insurance
     @appointment.patient_name = current_user.name
     @appointment.user_id = current_user.id
     @appointment.phone = current_user.phone
+    @appointment.email = current_user.email
     c = Aws::SNS::Client.new(region: REGION)
 
     p = c.publish(
@@ -92,6 +93,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.require(:appointment).permit(:patient_name, :clinic_name, :days, :time_of_day, :description, :insurance, :reoccur)
+      params.require(:appointment).permit(:patient_name, :clinic_name, :provider_type, :days, :time_of_day, :description, :insurance, :reoccur)
     end
 end

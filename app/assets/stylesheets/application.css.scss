@@ -21,13 +21,57 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.field {
+  padding-top: 10px;
+}
+
+textarea {
+  opacity: .75;
+  border-radius: 6px;
+  width: 30%;
+  border-width: 0px;
+}
+input {
+  opacity: .75;
+  border-radius: 6px;
+  width: 30%;
+}
+.editProfile {
+  text-align: center;
+  font-size: 18px;
+}
+th{
+  font-size: 18px;
+}
+tr{
+  font-size: 18px;
+}
+
+h1 {
+  font-weight: 200 !important;
+  letter-spacing: 1px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 36px;
+
+}
+.map {
+  float:right;
+}
 .providerInfo{
   position: relative;
   float: left;
   width: 500px;
+  font-size: 18px;
+}
+td {
+  img {
+    width: 15%;
+  }
 }
 .white_arrow{
   width: 5%;
+  opacity: 1;
 }
 .TokensContainer {
   opacity: .75;
@@ -53,7 +97,7 @@
     }
     h1 {
       font-size: 72px;
-      font-weight: 700;
+      font-weight: 200;
     }
     position: absolute;
     text-align: center;
@@ -115,3 +159,18 @@ body {
     width: 500px;
     height: 30px;
 }
+
+@media(max-width:767px){
+   /*mobile*/
+  .carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 500px;
+    max-width: none !important;
+  }
+   .providerInfo{
+     padding: 25px;
+   }
+ }

@@ -3,7 +3,7 @@
     %h2 Providers
   .locationsResult
     - if @locations.blank?
-      Your search did not return anything!
+      Your search did not return anything within 50 miles
     - else
       - @locations.each do |location|
         .row

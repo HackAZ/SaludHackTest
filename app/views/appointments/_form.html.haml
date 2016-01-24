@@ -8,8 +8,9 @@
             %li= msg
 
     = hidden_field_tag :clinic_name, params[:clinic_name]
+    = hidden_field_tag :provider_type, params[:provider_type]
     .field
-      = f.label :days
+      = f.label :days, "Day"
       = f.text_field :days
     .field
       = f.label :time_of_day
@@ -20,5 +21,6 @@
     .field
       = f.label :reoccur
       = f.text_field :reoccur
+      %br
     .actions
-      = f.submit 'Save'
+      = image_submit_tag("white_arrow.png", class: :'white_arrow')
