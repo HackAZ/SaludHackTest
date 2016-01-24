@@ -11,16 +11,16 @@
     = hidden_field_tag :provider_type, params[:provider_type]
     .field
       = f.label :days, "Day"
-      = f.text_field :days
+      = f.text_field :days, placeholder: :"What day of the week do you prefer?"
     .field
       = f.label :time_of_day
-      = f.text_field :time_of_day
+      = f.text_field :time_of_day, placeholder: :"Morning, Afternoon or Evening?"
     .field
       = f.label :description
-      = f.text_area :description
+      = f.text_area :description, placeholder: :"What's been bothering you?"
     .field
       = f.label :reoccur
-      = f.text_field :reoccur
+      = f.text_field :reoccur, placeholder: :"How many months between visits?"
       %br
     .actions
       = image_submit_tag("white_arrow.png", class: :'white_arrow')

@@ -20,10 +20,23 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-a {
-  color: #dcff1c;
+.devise_links {
+  color: #58dad7 !important;
 }
-
+label {
+  font-weight: 200 !important;
+}
+.signup {
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 18px;
+    font-weight: 100;
+}
+.createdAppointment {
+  p {
+      font-size: 18px !important;
+  }
+}
 .heart{
   display: block;
   max-width: 100px !important;

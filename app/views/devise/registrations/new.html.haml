@@ -1,47 +1,35 @@
 .container
-  .page-header
-    %h2 Sign up
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
-    .field
-      = f.label :name
-      %br/
-      = f.text_field :name
-    .field
-      = f.label :email
-      %br/
-      = f.email_field :email, autofocus: true
-    .field
-      = f.label :password
-      - if @minimum_password_length
-        %em
-          (#{@minimum_password_length} characters minimum)
-      %br/
-      = f.password_field :password, autocomplete: "off"
-    .field
-      = f.label :password_confirmation
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "off"
-    .field
-      = f.label :birthday
-      %br/
-      = f.date_field :birthday
-    .field
-      = f.label :phone
-      %br/
-      = f.text_field :phone
-    .field
-      = f.label :gender
-      %br/
-      = f.text_field :gender
-    .field
-      = f.label :address
-      %br/
-      = f.text_field :address
-    .field
-      = f.label :insurance
-      %br/
-      = f.text_field :insurance
-    .actions
-      = f.submit "Sign up"
-  = render "devise/shared/links"
+  .signup
+    %h1 Sign up
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      .field
+        = f.label :name
+        = f.text_field :name
+      .field
+        = f.label :email
+        = f.email_field :email, autofocus: true
+      .field
+        = f.label :password
+        = f.password_field :password, autocomplete: "off"
+      .field
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, autocomplete: "off"
+      .field
+        = f.label :birthday
+        = f.date_field :birthday
+      .field
+        = f.label :phone, "Phone Number"
+        = f.text_field :phone
+      .field
+        = f.label :gender
+        = f.text_field :gender
+      .field
+        = f.label :address
+        = f.text_field :address
+      .field
+        = f.label :insurance
+        = f.text_field :insurance
+      %br
+      .actions
+        = f.submit "Sign up", class: :"btn btn-default"

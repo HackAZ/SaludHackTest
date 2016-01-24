@@ -4,7 +4,7 @@ class ProvidersController < ApplicationController
   # GET /providers
   # GET /providers.json
   def index
-    @providers = Provider.all
+    @providers = Provider.all.near(current_user, 50, :order => "distance")
   end
 
   def search
