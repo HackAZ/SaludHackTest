@@ -20,7 +20,30 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+a {
+  color: #dcff1c;
+}
 
+.heart{
+  display: block;
+  max-width: 100px !important;
+  max-height: 150px !important;
+  width: auto !important;
+  height: auto !important;
+  margin-top: -25px !important;
+}
+.salud {
+  display: block;
+  max-width: 100px !important;
+  max-height: 100px !important;
+  width: auto !important;
+  height: auto !important;
+  margin-top: 16px !important;
+  margin-left: -30px !important;
+}
+#map {
+  border-radius: 6px;
+}
 .field {
   padding-top: 10px;
 }
@@ -60,9 +83,9 @@ h1 {
 }
 .providerInfo{
   position: relative;
-  float: left;
   width: 500px;
   font-size: 18px;
+  float:left;
 }
 td {
   img {
@@ -101,7 +124,7 @@ td {
     }
     position: absolute;
     text-align: center;
-    top: 50%;
+    top: 40%;
     width: 100%;
     z-index: 100;
 }
@@ -170,7 +193,18 @@ body {
     height: 500px;
     max-width: none !important;
   }
-   .providerInfo{
-     padding: 25px;
-   }
+  .TokensContainer {
+    overflow: auto !important;
+    width: 70%;
+  }
+
+  .form-group {
+    margin-bottom: 90px !important;
+  }
+  .providerInfo{
+    float: unset;
+  }
+  .map{
+    float: unset;
+  }
  }

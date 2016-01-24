@@ -35,6 +35,7 @@ class AppointmentsController < ApplicationController
   def edit
   end
 
+
   # POST /appointments
   # POST /appointments.json
   def create

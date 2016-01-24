@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'landing/index'
   get 'landing/afterlogin'
-
+  get 'map/map'
   devise_for :users
 
   root 'landing#index'

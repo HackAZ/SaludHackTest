@@ -1,3 +1,5 @@
+%script{:src => "https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.js"}
+%link{:href => "https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css", :rel => "stylesheet"}/
 .container
   .row
     .appointments
@@ -18,11 +20,4 @@
                 %td= appointment.days
                 %td= appointment.time_of_day
                 %td= link_to image_tag("white_arrow.png"), appointment, class: :'white_arrow'
-    #map
-
-
-
-:javascript
-  L.mapbox.accessToken = 'pk.eyJ1IjoiYW1waGl0aGVyZSIsImEiOiIyZGE2MWJhYTdlNjJkM2E4NTZhYjUyODE3NDFmNzY3MSJ9.EDkcexR3h8zGfuPOXADctQ';
-  var map = L.mapbox.map('map', 'mapbox.streets')
-      .setView([40, -74.50], 9);
+    

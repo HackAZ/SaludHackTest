@@ -16,3 +16,5 @@ Rails.application.config.assets.precompile += %w( landing-stage-sea-holiday-vaca
 Rails.application.config.assets.precompile += %w( city-person-relaxing-sitting.jpg )
 Rails.application.config.assets.precompile += %w( salud_heart.png )
 Rails.application.config.assets.precompile += %w( white_arrow.png )
+Rails.application.config.assets.precompile += %w( salud_full.png )
+Rails.application.config.assets.precompile += %w( salud.png )

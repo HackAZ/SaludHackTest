@@ -2,7 +2,10 @@ module LandingHelper
   def service_options
     s = ''
     Provider.all.each do |provider|
-      s << "<option value = '#{provider.provider_type}'> #{provider.provider_type}</options>"
+      if s.include? provider.provider_type
+      else
+        s << "<option value = '#{provider.provider_type}'> #{provider.provider_type}</options>"
+      end
     end
     s.html_safe
   end
@@ -10,7 +13,10 @@ module LandingHelper
   def specialization_options
     s = ''
     Provider.all.each do |provider|
-      s << "<option value = '#{provider.specialization}'> #{provider.specialization}</options>"
+      if s.include? provider.specialization
+      else
+        s << "<option value = '#{provider.specialization}'> #{provider.specialization}</options>"
+      end
     end
     s.html_safe
   end

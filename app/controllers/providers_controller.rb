@@ -8,8 +8,13 @@ class ProvidersController < ApplicationController
   end
 
   def search
-    # @location = current_user
-    @services = Provider.where(provider_type: params['services']).where(specialization: params['specialization'])
+    if params['services'].nil?
+      @services = Provider.where(specialization: params['specialization'], accepted_insurance: current_user.insurance)
+    elsif params['specialization'].nil?
+      @services = Provider.where(provider_type: params['services'], accepted_insurance: current_user.insurance)
+    else
+      @services = Provider.where(provider_type: params['services'], specialization: params['specialization'], accepted_insurance: current_user.insurance)
+    end
     @locations = @services.near(current_user, 50, :order => "distance")
   end
 
