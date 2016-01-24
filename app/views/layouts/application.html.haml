@@ -34,44 +34,25 @@
             = image_tag("salud_heart.png", class: :"navbar-brand")
         / Collect the nav links, forms, and other content for toggling
         .collapse.navbar-collapse.navbar-ex1-collapse
-          %ul.nav.navbar-nav
-            %li
-              %a{href: "#"} Link
-            %li
-              %a{href: "#"} Link
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                Dropdown
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  %a{href: "#"} Action
-                %li
-                  %a{href: "#"} Another action
-                %li
-                  %a{href: "#"} Something else here
-                %li
-                  %a{href: "#"} Separated link
-                %li
-                  %a{href: "#"} One more separated link
-
           %ul.nav.navbar-nav.navbar-right
-            %li
-              %a{href: "#"} Link
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                = "#{current_user.name} is logged in" unless current_user.nil?
+                - if user_signed_in?
+                  = "#{current_user.name} is logged in"
+                - else
+                  Sign In
                 %b.caret
               %ul.dropdown-menu
-                %li
-                  = link_to "Your Profile", edit_user_registration_path
-                %li
-                  %a{href: "#"} Another action
-                %li
-                  %a{href: "#"} Something else here
-                %li
-                  %a{href: "#"} Separated link
-        / /.navbar-collapse
+                -if user_signed_in?
+                  %li
+                    = link_to "Your Profile", edit_user_registration_path
+                  %li
+                    = link_to "Sign Out", destroy_user_session_path, method: :delete
+                - else
+                  %li
+                    = link_to "Sign In", new_user_session_path
+                  %li
+                    = link_to "Sign up", new_user_registration_path
 
   %body
     = yield
