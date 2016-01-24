@@ -20,8 +20,31 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+// .whiteBody {
+//   background: white;
+// }
+// .carousel {
+//   z-index: -1;
+// }
 
+.navbar-brand {
+  padding: 0px !important;
+}
+.headerInfo {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    z-index: 100;
+    .btn {
+      opacity: 0.8;
+    }
+}
 
+.carousel {
+  height: 700px;
+  overflow: hidden;
+}
 .locationsResult{
   .row {
     // padding: 1%;
@@ -46,6 +69,8 @@
     color: white !important;
     border: 0;
     border-radius: 0px;
+    margin-bottom: 0px;
+    padding: 10px;
 }
 
 .tokenize {
