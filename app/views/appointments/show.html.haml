@@ -19,6 +19,11 @@
   %p
     %b Insurance:
     = @appointment.insurance
+  %p
+    %b Reoccuring Appointment:
+    Every
+    = @appointment.reoccur
+    Months
 
   = link_to 'Edit', edit_appointment_path(@appointment)
   \|

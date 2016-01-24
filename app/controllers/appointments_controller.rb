@@ -9,10 +9,10 @@ class AppointmentsController < ApplicationController
 
   Aws.config.update(
     {
-      region: REGION, 
+      region: REGION,
       credentials: Aws::Credentials.new(
-        KEY, 
-        SECRET) 
+        KEY,
+        SECRET)
     })
 
   # GET /appointments
@@ -48,7 +48,7 @@ class AppointmentsController < ApplicationController
     p = c.publish(
       topic_arn: TOPIC,
       message: @appointment.to_json)
-    puts "Published... #{p.message_id}" 
+    puts "Published... #{p.message_id}"
     respond_to do |format|
       if @appointment.save
         format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
@@ -92,6 +92,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.require(:appointment).permit(:patient_name, :clinic_name, :days, :time_of_day, :description, :insurance)
+      params.require(:appointment).permit(:patient_name, :clinic_name, :days, :time_of_day, :description, :insurance, :reoccur)
     end
 end

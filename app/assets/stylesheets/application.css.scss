@@ -20,17 +20,18 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-// .whiteBody {
-//   background: white;
-// }
-// .carousel {
-//   z-index: -1;
-// }
+
+a {
+  color: #34D1CE;
+}
 
 .navbar-brand {
   padding: 0px !important;
 }
 .headerInfo {
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 900;
     position: absolute;
     text-align: center;
     top: 50%;
@@ -87,7 +88,6 @@ input, select, textarea{
 body {
   background: linear-gradient(#37A4A3, #468A95) fixed;
   color: white !important;
-  font-family: Century Gothic,CenturyGothic,AppleGothic,sans-serif !important;
 }
 
 .tokenize-sample {
