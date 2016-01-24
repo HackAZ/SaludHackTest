@@ -56,8 +56,7 @@
               %a{href: "#"} Link
             %li.dropdown
               %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                = current_user.name
-                is logged in
+                = "#{current_user.name} is logged in" unless current_user.nil?
                 %b.caret
               %ul.dropdown-menu
                 %li
