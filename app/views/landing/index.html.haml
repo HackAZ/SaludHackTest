@@ -1,6 +1,11 @@
 .container
 .headerInfo
-  %h1 cheers to good health
+  - if user_signed_in?
+    %h1
+      Welcome,
+      = current_user.name
+  - else
+    %h1 cheers to good health
   = link_to image_tag("white_arrow.png"), new_user_registration_path
 
 
